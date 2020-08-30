@@ -1,0 +1,56 @@
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+void solve()
+{
+	int n;
+	cin >> n;
+	int hash[26] = {0};
+	string s;
+	for (int i = 0; i < n; i++) {
+		cin >> s;
+		for (int j = 0; j < s.length(); j++)
+		{
+			hash[s[j] - 'a']++;
+		}
+
+	}
+
+	bool flag = 0;
+
+	for (int i = 0; i < 26; i++)
+	{
+		if (hash[i] % n != 0) {
+			flag = 1;
+			break;
+		}
+	}
+
+	if (flag)
+		cout << "NO";
+	else
+		cout << "YES";
+
+
+}
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+
+#ifndef ONLINE_JUDGE
+	freopen("input.txt", "r", stdin);
+	freopen("error.txt", "w", stderr);
+	freopen("output.txt", "w", stdout);
+#endif
+
+	int t;
+	cin >> t;
+	while (t--) {
+		solve();
+		cout << "\n";
+	}
+	return 0;
+}
+
