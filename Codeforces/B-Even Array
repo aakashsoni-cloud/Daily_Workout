@@ -1,0 +1,51 @@
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+void solve()
+{
+	int n;
+	cin >> n;
+	int arr[n], odd = 0, eve = 0;
+	for (int i = 0; i < n; i++)
+	{
+		cin >> arr[i];
+	}
+	for (int i = 0; i < n; i++)
+	{
+		if ((i % 2 == 0) && (arr[i] % 2 != 0))
+		{
+			eve++;
+		}
+		if ((i % 2 != 0) && (arr[i] % 2 == 0))
+		{
+			odd++;
+		}
+	}
+
+	if (odd != eve)
+		cout << -1;
+	else
+		cout << odd;
+
+}
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+
+#ifndef ONLINE_JUDGE
+	freopen("input.txt", "r", stdin);
+	freopen("error.txt", "w", stderr);
+	freopen("output.txt", "w", stdout);
+#endif
+
+	int t;
+	cin >> t;
+	while (t--) {
+		solve();
+		cout << "\n";
+	}
+	return 0;
+}
+
