@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+bool cmp(int a, int b) {
+	return a <= b;
+}
+void solve()
+{
+	int coins[] = {1, 2 , 5 , 10 , 20 , 50 , 100, 200, 500, 2000, 5000};
+	int n = sizeof(coins) / sizeof(int);
+	int money = 168;
+
+	while (money > 0) {
+		int lb = lower_bound(coins, coins + n, money, cmp) - coins - 1 ;
+
+		int m = coins[lb];
+		cout << m << ",";
+		money = money - m;
+	}
+
+
+
+}
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+
+#ifndef ONLINE_JUDGE
+	freopen("input.txt", "r", stdin);
+	freopen("error.txt", "w", stderr);
+	freopen("output.txt", "w", stdout);
+#endif
+
+
+	solve();
+	cout << "\n";
+  return 0;
+}
+
