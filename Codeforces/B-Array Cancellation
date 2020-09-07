@@ -1,0 +1,50 @@
+/*Link: https://codeforces.com/contest/1405/problem/B
+
+#Codeforces Round #668 (Div. 2) */
+
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+void solve()
+{
+	int n;
+	cin >> n;
+	ll a[n];
+	for (int i = 0; i < n; i++)
+		cin >> a[i];
+
+	ll t = 0, ans = 0;
+	for (int i = 0; i < n; i++)
+	{
+		t += a[i];
+		if (t < 0) {
+			ans += abs(t);
+			//cout << ans << " ";
+			t = 0;
+		}
+	}
+	cout << ans;
+}
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+
+#ifndef ONLINE_JUDGE
+	freopen("input.txt", "r", stdin);
+	freopen("error.txt", "w", stderr);
+	freopen("output.txt", "w", stdout);
+#endif
+
+	int t = 1;
+	cin >> t;
+	while (t--) {
+		solve();
+		cout << "\n";
+	}
+
+	
+	return 0;
+}
+ 
